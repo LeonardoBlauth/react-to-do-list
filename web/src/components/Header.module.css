@@ -1,0 +1,36 @@
+.header {
+  height: 12.5rem;
+  padding: 4.5rem 0 5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--gray-700);
+}
+
+.header img {
+  height: 2.25rem;
+}
+
+.header h1 {
+  background-color: var(--blue);
+  background-image: linear-gradient(
+    to right,
+    var(--blue) 30%,
+    var(--purple-dark) 55%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 3rem;
+
+  margin-left: 0.75rem;
+}
