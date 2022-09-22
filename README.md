@@ -19,21 +19,13 @@ To Do List is a web application to create, conclude and delete tasks. This proje
 
 <br />
 
-<div style="display: flex; justify-content: space-around; align-items: center;">
-
-<span>
+<h1 align="center">
 
 ![To Do List - Interface Responsive](https://imgur.com/wd22XTy.png)
 
-</span>
-
-<span>
-
 ![To Do List - Without Tasks Responsive](https://imgur.com/tp9rdrR.png)
 
-</span>
-
-</div>
+</h1>
 
 <br />
 
