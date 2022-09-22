@@ -11,37 +11,14 @@ import imgClipboard from './assets/clipboard.svg';
 import "./global.css";
 import styles from "./App.module.css";
 
-const baseTasks = [
-  {
-    id: uuidv4(),
-    content: "Wash the dishes",
-    completed: false,
-  },
-  {
-    id: uuidv4(),
-    content: "Take out the trash",
-    completed: false,
-  },
-  {
-    id: uuidv4(),
-    content: "Clean the house",
-    completed: false,
-  },
-  {
-    id: uuidv4(),
-    content: "Pay the bills",
-    completed: true,
-  },
-  {
-    id: uuidv4(),
-    content:
-      "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-    completed: true,
-  },
-];
+interface Task {
+  id: string;
+  content: string;
+  completed: boolean;
+}
 
 export function App() {
-  const [tasks, setTasks] = useState(baseTasks);
+  const [tasks, setTasks] = useState<Task[]>([]);
   const [newTask, setNewTask] = useState("");
 
   function handleCreateTask(event: FormEvent) {
