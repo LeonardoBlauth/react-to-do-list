@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
+import { ChangeEvent, FormEvent, InvalidEvent, useEffect, useState } from "react";
 import { PlusCircle } from "phosphor-react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -18,8 +18,24 @@ interface Task {
 }
 
 export function App() {
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<Task[]>(() => {
+    const storedStateAsJson = localStorage.getItem(
+        '@ignite-to-do-list:tasks-1.0.0',
+      )
+
+      if (storedStateAsJson) {
+        return JSON.parse(storedStateAsJson)
+      }
+
+      return []
+  });
   const [newTask, setNewTask] = useState("");
+
+  useEffect(() => {
+    const stateJson = JSON.stringify(tasks)
+
+    localStorage.setItem('@ignite-to-do-list:tasks-1.0.0', stateJson)
+  }, [tasks])
 
   function handleCreateTask(event: FormEvent) {
     event.preventDefault();
@@ -42,16 +58,16 @@ export function App() {
   }
 
   function toggleTask(taskIdToToggle: string) {
-    const taskToggled = tasks.map((task) => {
+    const completedTasks = tasks.filter(task => {
       if (task.id === taskIdToToggle) {
         task.completed = !task.completed;
       }
-      return task;
-    });
+      return task.completed
+    })
 
-    taskToggled.sort((a) => (a.completed === true ? 1 : -1));
+    const incompleteTasks = tasks.filter(task => task.completed !== true);
 
-    setTasks(taskToggled);
+    setTasks([...incompleteTasks, ...completedTasks]);
   }
 
   function deleteTask(taskIdToDelete: string) {
