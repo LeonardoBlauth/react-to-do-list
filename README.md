@@ -13,18 +13,18 @@ To Do List is a web application to create, conclude and delete tasks. This proje
 
 ## :camera: Screenshots
 
-![To Do List - Interface](https://imgur.com/dpgI607.png)
-
-![To Do List - Without Tasks](https://imgur.com/FZRNU4Z.png)
+<h1 align="center">
+  <img src="https://imgur.com/dpgI607.png" alt="To Do List - Interface" style="width: 70%; height: 70%;">
+  <img src="https://imgur.com/FZRNU4Z.png" alt="To Do List - Without Tasks" style="width: 70%; height: 70%;">
+</h1>
 
 <br />
 
 <h1 align="center">
-
-![To Do List - Interface Responsive](https://imgur.com/wd22XTy.png)
-
-![To Do List - Without Tasks Responsive](https://imgur.com/tp9rdrR.png)
-
+  <img src="https://imgur.com/wd22XTy.png" alt="To Do List - Interface Responsive" style="width: 35%;">
+</h1>
+<h1 align="center">
+  <img src="https://imgur.com/tp9rdrR.png" alt="To Do List - Without Tasks Responsive" style="width: 35%;">
 </h1>
 
 <br />
